@@ -19,6 +19,7 @@ namespace Project.Models
         }
         public DbSet<UserRegClass> UserTable { get; set; }
         public DbSet<Project.Models.LoginViewClass> LoginViewClass { get; set; }
+        public DbSet<Project.Models.ImageClass> ImageClass { get; set; }
        
     }
 }

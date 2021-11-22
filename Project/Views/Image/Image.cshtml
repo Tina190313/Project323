@@ -1,0 +1,26 @@
+﻿@model Project.Models.ImageModel
+
+<div class="container body-contenet">
+    <div class="image-content">
+        @foreach (var image in Model.image)
+        {
+            <div class="image-list"></div>
+            <span>@image.Name</span>
+            <ul>
+                @foreach(var Tag in image.Tag)
+                {
+
+                <li>
+                    @Tag.Description
+                </li>
+
+                }
+            </ul>
+
+
+
+        }
+
+    </div>
+</div> 
+

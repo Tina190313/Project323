@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Project.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+
+
 
 namespace Project.Controllers
 {
@@ -85,11 +88,12 @@ namespace Project.Controllers
             }
             return View(log);
         }
+       
 
 
 
 
 
-    }
+        }
 
 }
