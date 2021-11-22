@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project.Models
+namespace Project.Data.Models
 {
     public class ImageClass
     {
@@ -16,7 +16,7 @@ namespace Project.Models
         public DateTime CaptureDate { get; set; }
         public string Geolocation { get; set; }
         public string CaptureBy { get; set; }
-        public virtual IEnumerable <Tag> Tag { get; set; }
+        public virtual IEnumerable<Tag> Tag { get; set; }
        
 
     }

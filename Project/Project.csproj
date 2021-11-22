@@ -24,4 +24,9 @@
     <Folder Include="Providers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Data\Project.Data.csproj" />
+    <ProjectReference Include="..\Project.Service\Project.Service.csproj" />
+  </ItemGroup>
+
 </Project>

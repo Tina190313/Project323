@@ -51,7 +51,7 @@ namespace Project.Controllers
                 if(x.Succeeded)
                 {
                     await signIn.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("image", "gallery");
                 }
                 foreach(var error in x.Errors)
                 {

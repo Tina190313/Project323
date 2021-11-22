@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Project.Models;
 using Microsoft.AspNetCore.Identity;
-
+using Project.Data;
+using Project.Service;
+using Project.Data.Models;
 
 namespace Project
 {
@@ -28,12 +30,13 @@ namespace Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationUserClass>(options => options.UseSqlServer(Configuration.GetConnectionString("myDBConnection")));
+            services.AddDbContext<ProjectDb>(options => options.UseSqlServer(Configuration.GetConnectionString("myDBConnection")));
             services.AddControllersWithViews();
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationUserClass>();
 
-            
-               
+            services.AddScoped<Images, ServiceImages>();
+           
 
 
 

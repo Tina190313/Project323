@@ -1,26 +1,53 @@
-﻿@model Project.Models.ImageModel
+﻿@model IEnumerable<Project.Data.Models.ImageClass>
 
-<div class="container body-contenet">
-    <div class="image-content">
-        @foreach (var image in Model.image)
-        {
-            <div class="image-list"></div>
-            <span>@image.Name</span>
-            <ul>
-                @foreach(var Tag in image.Tag)
-                {
+@{
+    ViewData["Title"] = "Image";
+}
 
-                <li>
-                    @Tag.Description
-                </li>
+<h1>Image</h1>
 
-                }
-            </ul>
-
-
-
-        }
-
-    </div>
-</div> 
-
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaptureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Geolocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaptureBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaptureDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Geolocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaptureBy)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Photo_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Photo_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Photo_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
